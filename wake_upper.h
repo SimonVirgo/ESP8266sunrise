@@ -72,7 +72,7 @@ void loop() {
   Serial.println(Alarm);
    if (Alarm == 1) {
       for (int i = 0; i <= 39; i++) {
-        set_LED(i);
+        get_LED_animationcolor(i);
       }
 
         if (millis() - last_init > time_between_inits) {
@@ -109,7 +109,7 @@ void LEDS_off() {
   pixels.show();
 
 }
-void set_LED(int current_LED) { //current LED Value MUST be in the Range between 0 and 39!
+void get_LED_animationcolor(int current_LED) { //current LED Value MUST be in the Range between 0 and 39!
   if (LED_init_times[current_LED] != 0) {
     unsigned long uptime = millis() - LED_init_times[current_LED];
 
